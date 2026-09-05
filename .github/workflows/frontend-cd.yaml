@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint, test]
     env:
-      MOVIE_API_URL: ${{ vars.MOVIE_API_URL }}
+      MOVIE_API_URL: ${{ vars.MOVIE_API_URL || 'http://a5036c43ff125488bb9bf22d514dedb6-1835778001.us-east-1.elb.amazonaws.com' }}
     outputs:
       image: ${{ steps.image.outputs.image }}
     steps:
